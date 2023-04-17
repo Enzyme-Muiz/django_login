@@ -1,0 +1,58 @@
+{% extends "main/header.html" %}
+{% block content%}
+
+<div class="container">
+ <div class="row">
+ <div class="col s3">
+ <form action="" method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<p><strong>link to<a href="image_upload"> hotel</a>form</strong></p>
+<input type="Submit" name="submit" value="Submit"/>
+</form>
+
+{% if submitbutton == "Submit" %} 
+<p> Your first name is {{ firstname }}</p>
+<p> Your last name is {{ lastname }}</p>
+<p> Your email is {{ emailvalue }} </p>
+<p> Answer= {{ numberi }} </p>
+<p> Answer= {{ another }} </p>
+
+
+{% endif %}
+
+</div>
+
+
+
+<div class="col s3  offset-s3">
+ <form action="" method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="Submit_picture" name="submit_picture" value="Submit_picture"/>
+</form>
+
+{% if submitbutton == "Submit" %} 
+<p> Your first name is {{ firstname }}</p>
+<p> Your last name is {{ lastname }}</p>
+<p> Your email is {{ emailvalue }} </p>
+<p> Answer= {{ numberi }} </p>
+<p> Answer= {{ another }} </p>
+
+
+{% endif %}
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+{% endblock content %}
